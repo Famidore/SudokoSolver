@@ -11,7 +11,8 @@ function solve() {
     for (let i = 0; i < fund.length; i++) {
         firstIndex = fund[i][0]
         tiles[firstIndex].r = 255;
-        blanks[firstIndex].splice(blanks[firstIndex].indexOf((tiles[firstIndex].number)), 1)
+        //blanks[firstIndex].splice(blanks[firstIndex].indexOf((tiles[firstIndex].number)), 1)
+        blanks[firstIndex] = []
 
         checkRow(fund[i][1], tiles[firstIndex].number)
         checkCol(fund[i][2], tiles[firstIndex].number)
