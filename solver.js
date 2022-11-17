@@ -1,12 +1,12 @@
+
+
 function solve() {
     let possible = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    let blanks = []
+
 
     fund = findNumber()
     //print(fund)
-    for (let i = 0; i < tiles.length; i++) {
-        blanks[i] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    }
+
 
     for (let i = 0; i < fund.length; i++) {
         firstIndex = fund[i][0]
@@ -18,9 +18,6 @@ function solve() {
         checkCol(fund[i][2], tiles[firstIndex].number)
     }
     print(blanks)
-
-    
-
 }
 
 function findNumber() {
@@ -39,17 +36,17 @@ function findNumber() {
 
 function chceck3by3(row, col, num) {
 
-    
+
 }
 
 function checkRow(row, num) {
     for (let i = 0; i <= board.size + 1; i += tiles[0].size) {
 
     }
-    
+
 }
 
 function checkCol(col, num) {
-    
+
 }
 
