@@ -1,17 +1,11 @@
 
 
 function solve() {
-    let possible = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-
     fund = findNumber()
-    //print(fund)
-
 
     for (let i = 0; i < fund.length; i++) {
         firstIndex = fund[i][0]
         tiles[firstIndex].r = 255;
-        //blanks[firstIndex].splice(blanks[firstIndex].indexOf((tiles[firstIndex].number)), 1)
         blanks[firstIndex] = []
 
         checkRow(fund[i][1], tiles[firstIndex].number)
@@ -28,25 +22,36 @@ function findNumber() {
         }
     }
     if (found != []) {
-        //print(found)
         return found
     }
     console.error('Could not find beginning!')
 }
 
 function chceck3by3(row, col, num) {
-
+    for (let i = row; i < 3; i++) {
+        for (let j = col; j < 3; j++) {
+            if (blanks[i + j * board.size]) {
+                blanks[i + j * board.size].splice(blanks[i + j * board.size].indexOf(num, 1))
+            }
+        }
+    }
 
 }
 
 function checkRow(row, num) {
-    for (let i = 0; i <= board.size + 1; i += tiles[0].size) {
-
+    for (let i = 0; i <= board.size + 1; i += 1) {
+        if (blanks[row + i]) {
+            blanks[row + i].splice(blanks[row + i].indexOf(num, 1))
+        }
     }
 
 }
 
 function checkCol(col, num) {
-
+    for (let i = 0; i <= board.size + 1; i += 1) {
+        if (blanks[col * i]) {
+            blanks[col * i].splice(blanks[col * i].indexOf(num, 1))
+        }
+    }
 }
 
